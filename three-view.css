@@ -21,7 +21,7 @@ body[data-view="fly"] #viewTools{bottom:90px}
 .mid-hint{z-index:2;pointer-events:none}
 .coop-on #coopBar{bottom:max(4px,env(safe-area-inset-bottom));max-width:calc(100% - 20px)}
 .coop-on #buildScreen{padding-bottom:74px}
-.coop-on #viewTools{bottom:82px}
+body.coop-on[data-view="home"] #viewTools,body.coop-on[data-view="build"] #viewTools{bottom:82px}
 .coop-on[data-view="fly"] #viewTools{bottom:158px}
 .coop-on .fly-ctrl{bottom:76px}
 #boot3d{position:fixed;inset:0;z-index:10000;background:#0b1b29;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:30px;text-align:center}

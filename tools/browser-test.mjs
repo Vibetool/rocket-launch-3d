@@ -13,7 +13,7 @@ const server=createServer(async(req,res)=>{
 });
 await new Promise(r=>server.listen(0,'127.0.0.1',r));
 const url=process.env.TEST_URL||`http://127.0.0.1:${server.address().port}`;
-const browser=await chromium.launch({channel:'chrome',headless:true,args:['--no-proxy-server']});
+const browser=await chromium.launch({channel:'chrome',headless:true,...(process.env.TEST_PROXY?{proxy:{server:process.env.TEST_PROXY}}:{args:['--no-proxy-server']})});
 const errors=[];
 try{
 const page=await browser.newPage({viewport:{width:1440,height:900}});
