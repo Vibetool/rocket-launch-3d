@@ -85,6 +85,9 @@ assert.equal(await mobile.evaluate(()=>ROCKET3D.view),'fly');
 // Two real WebRTC peers, locally exchanged SDP (no writes to production signaling).
 await page.goto(url);await mobile.goto(url);
 await Promise.all([page.waitForFunction(()=>window.__threeReady),mobile.waitForFunction(()=>window.__threeReady)]);
+// Production co-op entry is temporarily disabled; test retained protocol explicitly.
+assert.equal(await page.locator('#btnCoop').isVisible(),false);
+await Promise.all([page.evaluate(()=>bindCoopEvents()),mobile.evaluate(()=>bindCoopEvents())]);
 const offer=await page.evaluate(async()=>{
  ICE.iceServers=[];NET.active=true;NET.role='host';setupPeer(true);
  await NET.pc.setLocalDescription(await NET.pc.createOffer());

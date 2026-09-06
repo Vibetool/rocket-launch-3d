@@ -5,4 +5,5 @@
 window.ROCKET_API = 'https://api.ovobot.ai/ships.php';
 
 // 双人联机：WebRTC 信令（接通后游戏数据与语音走 P2P，不经服务器）
-window.ROCKET_ROOM_API = 'https://api.ovobot.ai/room.php';
+// 3D 实验版暂时隐藏联机；恢复时填回 https://api.ovobot.ai/room.php。
+window.ROCKET_ROOM_API = '';
