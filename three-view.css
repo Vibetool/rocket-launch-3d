@@ -1,0 +1,36 @@
+:root{--accent:#ef9d54;--accent-2:#7ddbd5}
+[hidden]{display:none!important}
+#scene,#sky,#preview{visibility:hidden}
+.webgl-view{display:block;width:100%;height:100%;position:absolute;inset:0;touch-action:none;outline:none}
+#homeScreen,#flyScreen{position:fixed;inset:0}
+.mid{position:relative;overflow:hidden}
+.title-wrap{z-index:2;text-align:left;padding-left:clamp(22px,5vw,80px);padding-top:40px}
+.title-wrap h1{font-size:clamp(32px,4.5vw,64px);font-weight:700;letter-spacing:-2px}
+.title-wrap em{display:inline-block;font-size:.38em;border:1px solid #eab681;padding:7px 9px;vertical-align:middle;border-radius:6px;letter-spacing:1px;color:#edbd89;font-style:normal}
+.sub{font-size:11px;letter-spacing:3px;color:#d4e7ed}
+.hotspot{z-index:3}
+.hs-label{background:#0d202de8!important;border:1px solid #90bbb96b;backdrop-filter:blur(8px)}
+#viewTools{position:fixed;bottom:max(16px,env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:12;display:flex;align-items:center;gap:10px;background:#0c1c29dc;border:1px solid #66898b66;border-radius:30px;padding:8px 12px;white-space:nowrap;box-shadow:0 4px 20px #0003}
+#viewHint{font-size:11px;color:#b2cbd1;padding:0 8px}
+#viewTools button{font-size:11px;border-radius:18px;background:#223e4c;padding:8px 12px;min-height:32px}
+body[data-view="home"] #btnCoop{top:auto;left:auto;right:18px;bottom:18px}
+body[data-view="build"] #viewTools{bottom:16px}
+body[data-view="fly"] #viewTools{bottom:90px}
+.hud,.fly-ctrl,#moonHud,.fuel-wrap,#sepHint{z-index:4}
+.topbar,.col:not(.mid){background:#101f2d}
+.mid-hint{z-index:2;pointer-events:none}
+.coop-on #coopBar{bottom:max(4px,env(safe-area-inset-bottom));max-width:calc(100% - 20px)}
+.coop-on #buildScreen{padding-bottom:74px}
+.coop-on #viewTools{bottom:82px}
+.coop-on[data-view="fly"] #viewTools{bottom:158px}
+.coop-on .fly-ctrl{bottom:76px}
+#boot3d{position:fixed;inset:0;z-index:10000;background:#0b1b29;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;padding:30px;text-align:center}
+#boot3d b{font-size:24px;color:#edbd89}#boot3d p{color:#abc4d1;font-size:14px}#boot3d a{color:#7ddbd5}
+@media(max-width:760px){
+ .title-wrap{padding:24px 18px}.title-wrap h1{font-size:32px}.sub{font-size:9px;letter-spacing:1.7px}
+ body[data-view="home"] #btnCoop{bottom:78px;right:14px}
+ #viewTools{gap:5px;padding:5px 7px;bottom:12px}#viewHint{display:none}
+ .hs-label{font-size:12px!important;padding:9px 12px!important}.hs-label small{font-size:10px}
+ body[data-view="build"] #viewTools{bottom:12px}
+ .mid-hint{bottom:60px!important;font-size:11px}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "rocket-launch-3d",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {"vendor": "node tools/vendor.mjs", "test": "node tools/test.mjs"},
+  "dependencies": {"three": "0.166.1"},
+  "devDependencies": {"@playwright/test": "1.55.0"}
+}
